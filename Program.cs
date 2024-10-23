@@ -11,7 +11,7 @@ using ChatHistory = Microsoft.SemanticKernel.ChatCompletion.ChatHistory;
 var modelPath = "HFModel/mistral-7b-instruct-v0.2.Q5_K_S.gguf";
 
 // Disable verbose logging
-NativeApi.llama_log_set((level, message) =>
+NativeLogConfig.llama_log_set((level, message) =>
 {
   if (level == LLamaLogLevel.Error || level == LLamaLogLevel.Warning)
   {
